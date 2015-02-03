@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html ng-app="fireGram">
+<html ng-app="fireKeep">
 <head>
 	<link rel="stylesheet" href="style.css">
 	<title>fireGram</title>	
 </head>
-<body ng-controller="mainCtrl">
+<body ng-controller="homeCtrl">
 
 
 
 <h1>welcome</h1>
-<h3>Nav: <a href="/#/">Home</a> <a href="/#/about">About</a> <a href="/#/pictures">Pictures</a>
+<h3>Nav: <a href="/#/">Home</a> <a href="/#/about">About</a>
 </h3>
 
 <ng-view></ng-view>
@@ -30,11 +30,11 @@
 <!-- Angular Fire -->
 <script src="https://cdn.firebase.com/libs/angularfire/0.9.2/angularfire.min.js"></script>
 <script src="js/app.js"></script>
-<script src="js/mainCtrl.js"></script>
-<script src="js/mainService.js"></script>
+<!-- <script src="js/mainCtrl.js"></script>
+<script src="js/mainService.js"></script> -->
 <script src="home/homeCtrl.js"></script>
-<script src="about/aboutCtrl.js"></script>
-<script src="pictures/picturesCtrl.js"></script>
+<script src="js/mainService.js"></script>
+
 <!-- <script src=""></script> -->
 </body>
 </html>

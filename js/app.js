@@ -1,4 +1,4 @@
-var app = angular.module('fireGram', ['firebase', 'ngRoute']);
+var app = angular.module('fireKeep', ['firebase', 'ngRoute']);
 
 app.config(function($routeProvider) {
 	$routeProvider
@@ -9,10 +9,6 @@ app.config(function($routeProvider) {
 	.when('/about', {
 		templateUrl: 'about/about.html',
 		controller: 'aboutCtrl'
-	}) // close .when
-	.when('/pictures', {
-		templateUrl: 'pictures/pictures.html',
-		controller: 'picturesCtrl'
 	}) // close .when
 	.otherwise('/');
 

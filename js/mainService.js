@@ -1,9 +1,9 @@
-var app = angular.module('fireGram');
+var app = angular.module('fireKeep');
 
 app.service('mainService', function($firebase) {
 
 
-	var sync = $firebase(new Firebase('https://firegram.firebaseio.com/'));
+	var sync = $firebase(new Firebase('https://firekeep.firebaseio.com/'));
 				//sync, ref, url
 	
 	this.returnSync = function() {
