@@ -13,6 +13,16 @@
 	<ul>
 		<li> Title: {{ post.title }}, Link: <a target="_blank" ng-href="{{ post.link }}">{{post.link}}</a>, Tag: {{ post.tag }}
 		</li>
+
 	</ul>
-	<b
+	
+	<button ng-click="toggleAddCommentSwitch(post)">View / Add comment</button>
+	
+	<div ng-show="post.showComment">
+		<input type="text" ng-model="newComment" placeholder="comment!"/>
+		<button ng-click="addComment(post, newComment)">Post</button>
+		<ul><li ng-repeat = "(key, value) in post.comments">{{value.text}}</li></ul>
+		
+	</div>
+
 </div>

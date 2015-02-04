@@ -11,6 +11,24 @@ app.controller('homeCtrl', function($scope, mainService) {
 		$scope.newPostTag = '';
 	};
 
+	$scope.toggleAddComment = false;
+
+	$scope.toggleAddCommentSwitch = function(post) {
+		
+		if(!post.showComment){
+		 post.showComment = true;
+		}
+		else {
+			post.showComment = false;
+		}
+	};
+
+	$scope.addComment = function(post, comment) {
+		mainService.getComments(post.$id).$add({text: comment, createdAt: new Date().toISOString()})
+			post.showComment = true;
+
+
+	};
 
 
 }); // close app.controller

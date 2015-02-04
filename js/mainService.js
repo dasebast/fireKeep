@@ -10,6 +10,11 @@ app.service('mainService', function($firebase) {
 		return sync.$asArray();
 	};
 
+	this.getComments = function(postId) {
+		var commentsRef = $firebase(new Firebase('https://firekeep.firebaseio.com/' + postId + '/comments'));
+		return commentsRef.$asArray();
+	};
+
 
 	// ref.$asArray().$loaded().then(function(object) {
 	// 	$scope.pictureUrl = object;
