@@ -1,13 +1,17 @@
 <h2>Welcome home</h2>
 
-<div>
-	<form name="newPostForm">
-		<input type="text" ng-model="newPostTitle" placeholder="Enter a title"/>
-		<input type="text" ng-model="newPostLink" placeholder="Enter a link"/>
-		<input type ="text" ng-model="newPostTag" placeholder="Enter relevant Tags"/>
-		<button ng-click="postSubmit()">Submit Post</button>
+
+	<form name="newPostForm" ng-submit="postFormToggle()">
+		<button type="submit">Post Form Toggle</button>
+		<div ng-show="toggleForm">
+			<input type="text" ng-model="newPostTitle" placeholder="Enter a title"/>
+			<input type="text" ng-model="newPostLink" placeholder="Enter a link"/>
+			<input type ="text" ng-model="newPostTag" placeholder="Enter relevant Tags"/>
+			
+		</div>
 	</form>
-</div>
+	<button ng-show="toggleForm" ng-click="cancel()">Cancel</button>
+
 
 <div class="post" ng-repeat="post in posts | orderBy: 'createdAt' : true">
 	<ul>
@@ -16,10 +20,10 @@
 
 	</ul>
 	
-	<button ng-click="toggleAddCommentSwitch(post)">View / Add comment</button>
+	<button ng-click="toggleAddCommentSwitch($index)">View / Add comment</button>
 	
-	<div ng-show="post.showComment">
-		<input type="text" ng-model="newComment" placeholder="comment!"/>
+	<div ng-show="$index === indexToShow">
+		<input type="text" ng-model="newComment.text" placeholder="comment!"/>
 		<button ng-click="addComment(post, newComment)">Post</button>
 		<ul><li ng-repeat = "(key, value) in post.comments">{{value.text}}</li></ul>
 		
